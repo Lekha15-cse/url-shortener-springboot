@@ -1,4 +1,4 @@
-package com.neueda.interview.urlshortener.common;
+package com.lekha.urlshortener.common;
 
 /**
  * Provides encoding and decoding methods Base10 to Base62 and vice versa

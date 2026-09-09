@@ -1,25 +1,23 @@
-package com.neueda.interview.urlshortener.controller;
+package com.lekha.urlshortener.controller;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.neueda.interview.urlshortener.dto.FullUrl;
-import com.neueda.interview.urlshortener.service.UrlService;
-import org.junit.Assert;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import com.lekha.urlshortener.dto.FullUrl;
+import com.lekha.urlshortener.service.UrlService;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
 import static org.hamcrest.Matchers.startsWith;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
 public class UrlControllerIntegrationTest {
@@ -78,7 +76,7 @@ public class UrlControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.shortUrl", startsWith("http"))).andReturn().getResponse().getContentAsString();
 
-        Assert.assertEquals(shortUrl1, shortUrl2);
+        assertEquals(shortUrl1, shortUrl2);
     }
 
     @Test
@@ -98,7 +96,7 @@ public class UrlControllerIntegrationTest {
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.shortUrl", startsWith("http"))).andReturn().getResponse().getContentAsString();
 
-        Assert.assertNotEquals(shortUrl1, shortUrl2);
+        assertNotEquals(shortUrl1, shortUrl2);
     }
 
     public static String asJsonString(final Object obj) throws JsonProcessingException {

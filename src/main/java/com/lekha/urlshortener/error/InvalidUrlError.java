@@ -1,4 +1,4 @@
-package com.neueda.interview.urlshortener.error;
+package com.lekha.urlshortener.error;
 
 public class InvalidUrlError {
     private String field;

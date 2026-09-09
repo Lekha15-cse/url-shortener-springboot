@@ -1,10 +1,10 @@
-package com.neueda.interview.urlshortener.controller;
+package com.lekha.urlshortener.controller;
 
-import com.neueda.interview.urlshortener.common.UrlUtil;
-import com.neueda.interview.urlshortener.dto.ShortUrl;
-import com.neueda.interview.urlshortener.error.InvalidUrlError;
-import com.neueda.interview.urlshortener.dto.FullUrl;
-import com.neueda.interview.urlshortener.service.UrlService;
+import com.lekha.urlshortener.common.UrlUtil;
+import com.lekha.urlshortener.dto.ShortUrl;
+import com.lekha.urlshortener.error.InvalidUrlError;
+import com.lekha.urlshortener.dto.FullUrl;
+import com.lekha.urlshortener.service.UrlService;
 import org.apache.commons.validator.routines.UrlValidator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -34,13 +34,13 @@ public class UrlController {
         this.urlService = urlService;
     }
 
-    // ✅ Show home page
+    // Show home page
     @GetMapping("/")
     public String homePage() {
         return "index";
     }
 
-    // ✅ Handle form submission from Thymeleaf page
+    // Handle form submission from Thymeleaf page
     @PostMapping("/shorten-page")
     public String shortenFromPage(
             @RequestParam("fullUrl") String fullUrl,
@@ -66,7 +66,7 @@ public class UrlController {
         return "index";
     }
 
-    // ✅ REST API - shorten URL (kept for API use)
+    // REST API - shorten URL
     @PostMapping("/shorten")
     @ResponseBody
     public ResponseEntity<Object> saveUrl(@RequestBody FullUrl fullUrl, HttpServletRequest request) {
@@ -93,7 +93,7 @@ public class UrlController {
         return new ResponseEntity<>(shortUrl, HttpStatus.OK);
     }
 
-    // ✅ Redirect short URL to full URL
+    // Redirect short URL to full URL
     @GetMapping("/{shortenString}")
     public void redirectToFullUrl(HttpServletResponse response, @PathVariable String shortenString) {
         try {

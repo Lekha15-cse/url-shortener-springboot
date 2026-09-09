@@ -1,10 +1,10 @@
-package com.neueda.interview.urlshortener.service;
+package com.lekha.urlshortener.service;
 
-import com.neueda.interview.urlshortener.repository.UrlRepository;
-import com.neueda.interview.urlshortener.common.ShorteningUtil;
-import com.neueda.interview.urlshortener.model.UrlEntity;
-import com.neueda.interview.urlshortener.dto.FullUrl;
-import com.neueda.interview.urlshortener.dto.ShortUrl;
+import com.lekha.urlshortener.repository.UrlRepository;
+import com.lekha.urlshortener.common.ShorteningUtil;
+import com.lekha.urlshortener.model.UrlEntity;
+import com.lekha.urlshortener.dto.FullUrl;
+import com.lekha.urlshortener.dto.ShortUrl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

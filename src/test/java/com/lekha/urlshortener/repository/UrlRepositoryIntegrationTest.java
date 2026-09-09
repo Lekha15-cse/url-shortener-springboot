@@ -1,18 +1,15 @@
-package com.neueda.interview.urlshortener.repository;
+package com.lekha.urlshortener.repository;
 
-import com.neueda.interview.urlshortener.model.UrlEntity;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import com.lekha.urlshortener.model.UrlEntity;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.boot.test.autoconfigure.orm.jpa.TestEntityManager;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.notNullValue;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.MatcherAssert.assertThat;
 
-@RunWith(SpringRunner.class)
 @DataJpaTest
 public class UrlRepositoryIntegrationTest {
 

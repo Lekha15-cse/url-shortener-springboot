@@ -1,4 +1,4 @@
-package com.neueda.interview.urlshortener.dto;
+package com.lekha.urlshortener.dto;
 
 public class FullUrl {
 

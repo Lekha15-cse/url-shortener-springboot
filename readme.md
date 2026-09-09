@@ -46,29 +46,30 @@ App runs at: **http://localhost:9090**
 ## 📖 Usage
 
 ### Web UI
-Open browser at http://localhost:9090 and paste any URL to shorten it.
+Open browser at `http://localhost:9090` and paste any URL to shorten it.
 
 ### REST API
 
-Shorten a URL:
-```
+**Shorten a URL:**
+```http
 POST /shorten
 Content-Type: application/json
+
 { "fullUrl": "https://example.com/very/long/url" }
 ```
 
-Response:
-```
+**Response:**
+```json
 { "shortUrl": "http://localhost:9090/ab" }
 ```
 
-Redirect:
-```
-GET /{shortCode} → redirects to original URL
+**Redirect:**
+```http
+GET /{shortCode} -> redirects to original URL
 ```
 
-Health Check:
-```
+**Health Check:**
+```http
 GET /actuator/health
 ```
 
@@ -79,14 +80,14 @@ Uses **Base62 encoding** on the auto-generated database ID to produce short, rea
 ## 📁 Project Structure
 
 ```
-src/main/java/com/neueda/interview/urlshortener/
-├── controller/     # Handles HTTP requests (REST + Web)
-├── service/        # Business logic
-├── repository/     # Database access layer
-├── model/          # JPA Entity
-├── dto/            # Data Transfer Objects
-├── common/         # Utility classes (Base62, URL utils)
-└── error/          # Custom error handling
+src/main/java/com/lekha/urlshortener/
++-- controller/     # Handles HTTP requests (REST + Web)
++-- service/        # Business logic
++-- repository/     # Database access layer
++-- model/          # JPA Entity
++-- dto/            # Data Transfer Objects
++-- common/         # Utility classes (Base62, URL utils)
++-- error/          # Custom error handling
 ```
 
 ## 🐳 Docker Setup
@@ -108,5 +109,5 @@ Connected via `urlshortener-mysql-network` Docker network.
 
 ## 👤 Author
 
-**Lekha P**
+**Lekha Pandi**  
 GitHub: [@Lekha15-cse](https://github.com/Lekha15-cse)

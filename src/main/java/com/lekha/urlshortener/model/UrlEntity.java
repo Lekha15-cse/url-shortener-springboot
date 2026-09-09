@@ -1,4 +1,4 @@
-package com.neueda.interview.urlshortener.model;
+package com.lekha.urlshortener.model;
 
 import org.springframework.context.annotation.ComponentScan;
 

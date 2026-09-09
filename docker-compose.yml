@@ -24,8 +24,6 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=pa55w0rd
       - MYSQL_DATABASE=urldb
-      - MYSQL_USER=urlshortener
-      - MYSQL_PASSWORD=123456
     ports:
       - '3306:3306'
 

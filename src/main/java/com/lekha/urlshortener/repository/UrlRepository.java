@@ -1,6 +1,6 @@
-package com.neueda.interview.urlshortener.repository;
+package com.lekha.urlshortener.repository;
 
-import com.neueda.interview.urlshortener.model.UrlEntity;
+import com.lekha.urlshortener.model.UrlEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
